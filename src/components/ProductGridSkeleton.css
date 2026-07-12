@@ -1,0 +1,12 @@
+.skeleton-heading-product {
+  width: 130px;
+  height: 28px;
+  margin-bottom: 20px;
+  background: #fbe5da;
+  border-radius: 6px;
+  animation: pulse 1.4s infinite ease-in-out;
+}
+
+.skeleton-section-product {
+  margin-top: 40px;
+}

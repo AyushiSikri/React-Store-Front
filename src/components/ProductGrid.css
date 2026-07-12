@@ -1,0 +1,28 @@
+.product-grid :hover {
+  /* background-color: rgb(223, 222, 222); */
+  /* background-color: #fbe5da; */
+  /* border: 0.5px solid #74b8f7; */
+}
+
+.section-product{
+ margin: 10px;
+ /* padding: 15px; */
+}
+
+.product-grid {
+  display: grid;
+  /* font-family: ui-monospace, Consolas, monospace; */
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Open Sans', sans-serif; */
+  /* padding: 5px 15px; */
+  gap: 20px;
+  padding-bottom: 0px;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+}
+
+.heading-product {
+  text-align: left;
+  font-size: 25px;
+  font-weight: 600;
+  color: #605f5f;
+}

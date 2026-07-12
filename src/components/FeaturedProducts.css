@@ -1,0 +1,31 @@
+.featured-container :hover {
+  /* background-color: rgb(223, 222, 222); */
+  /* border: 0.5px solid #74b8f7; */
+    /* background-color:#fcf1eb; */
+}
+.featured-product-grid {
+  /* margin: 25px; */
+  border-radius: 15px;
+  /* margin-right: 20px; */
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  margin: 20px 40px;
+  gap: 20px;
+  /* padding-bottom: 0px; */
+}
+
+.heading-featured-product {
+  text-align: left;
+  padding-left: 45px;
+  font-size: 25px;
+  font-weight: 600;
+  color: #605f5f;
+}
+
+.featured-container{
+  background-color: #fbe5da;
+  padding:20px;
+  margin: 30px 0px;
+}
+ 

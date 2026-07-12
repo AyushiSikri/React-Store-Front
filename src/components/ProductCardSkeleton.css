@@ -1,0 +1,39 @@
+
+.skeleton-image {
+    background: #fbe5da;
+  border-radius: 8px;
+  animation: pulse 1.3s infinite;
+  height: 170px;
+}
+
+.skeleton-title {
+    background: #fbe5da;
+  border-radius: 8px;
+  animation: pulse 1.3s infinite;
+  margin-top: 15px;
+  height: 18px;
+  width: 80%;
+}
+
+.skeleton-price {
+    background: #fbe5da;
+  border-radius: 8px;
+  animation: pulse 1.3s infinite;
+  margin-top: 10px;
+  height: 18px;
+  width: 40%;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}

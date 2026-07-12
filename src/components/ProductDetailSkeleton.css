@@ -1,0 +1,146 @@
+.skeleton {
+  background: #fbe5da;
+  border-radius: 6px;
+  animation: pulse 1.4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: .55;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .55;
+  }
+}    .product-detail-section {
+  background-color: white;
+  padding: 20px;
+  margin: 30px;
+  margin-right: 60px;
+  margin-left: 60px;
+  border-radius: 3px;
+  display: flex;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.product-detail-inner-section {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 0.5px solid #dfdddd;
+}
+
+.product-detail-thumbnail {
+  width: 80%;
+  object-fit: contain;
+  height: 300px;
+  padding: 20px;
+  background-color: #fcf1eb;
+  border-radius: 10px;
+}
+
+.product-detail-img-div {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.product-detail-img {
+  width: 90px;
+  object-fit: contain;
+  height: 90px;
+  padding: 5px;
+  background-color: #fcf1eb;
+  border-radius: 10px;
+}
+
+.product-detail-section-para {
+  background-color: white;
+  padding: 15px;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  /* align-content: center; */
+}
+
+.product-detail-brand {
+  color: #fa8f55;
+  font-size: 23px;
+  line-height: 0.8;
+  font-weight: 700;
+}
+
+.product-detail-title {
+  color: #3f3f3f;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.product-detail-category {
+  color: #cbcbcb;
+  /* color: #fa8f55; */
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 0.3;
+}
+
+.product-detail-description {
+  color: black;
+  line-height: 1.3;
+  font-size: 15px;
+  margin-bottom: 5px;
+  /* text-align: center; */
+  /* font-weight: 100; */
+}
+
+.product-detail-price {
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 0.4;
+  padding-top: 3px;
+}
+
+.product-tax {
+  color: #858484;
+  font-size: 12px;
+}
+
+.product-detail-rating {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.product-detail-rating-text {
+  font-size: 14px;
+  color: #666;
+  padding-left: 5px;
+}
+
+.in-stoc {
+  color: #fa8f55;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.add-cart-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  background-color: #fa8f55;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+}

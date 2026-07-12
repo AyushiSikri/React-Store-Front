@@ -1,0 +1,39 @@
+.skeleton {
+  background: #fbe5da;
+  border-radius: 6px;
+  animation: pulse 1.4s infinite ease-in-out;
+}
+.aside-category-skeleton{
+    margin-top: 40px;
+}
+.skeleton-heading {
+  width: 130px;
+  height: 28px;
+  margin-bottom: 20px;
+}
+
+.skeleton-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.skeleton-category-text {
+  width: 120px;
+  height: 16px;
+  margin-left: 12px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.55;
+  }
+}

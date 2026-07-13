@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 function ProductCard({ product }) {
   const navigate = useNavigate();
-  console.log(product)
+  // console.log(product)
   return (
     <div
       onClick={() => {
@@ -14,6 +14,7 @@ function ProductCard({ product }) {
     >
       <div className="img-div">
         <img className="img-product" 
+        loading="lazy"
         alt={product.title}
         src={product?.thumbnail} />
       </div>

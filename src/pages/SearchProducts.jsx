@@ -4,22 +4,28 @@ import "./SearchProducts.css";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
-import ErrorState from "../components/ErrorState";
+import ErrorState from "../components/ErrorState/ErrorState";
+import ProductCardSkeleton from "../components/LoadingSkeleton/ProductCardSkeleton";
+
+
 function SearchProducts() {
   const [searchedProducts, setSearchedProducts] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  //  const [value, setValue] = useState("");
   const searchText = searchParams.get("q") || "";
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   async function fetchSearchedProducts(searchText) {
     try {
+      setLoading(true);
       setError(null);
       const data = await getSearchedProducts(searchText);
       setSearchedProducts(data);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
-      setError("Unable to load product.");
+      setError("Unable to fetch searched items.");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -79,9 +85,15 @@ function SearchProducts() {
       </div>
 
       <div className="searched-product-grid">
-        {searchedProducts?.map((item) => {
-          return <ProductCard key={item.id} product={item} />;
-        })}
+        {loading ? (
+           Array.from({ length: 12 }).map((_, index) => (
+          <ProductCardSkeleton key={index} />
+        ))
+        ) : (
+          searchedProducts?.map((item) => {
+            return <ProductCard key={item.id} product={item} />;
+          })
+        )}
       </div>
     </section>
   );

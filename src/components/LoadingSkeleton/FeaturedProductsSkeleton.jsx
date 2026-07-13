@@ -1,5 +1,5 @@
 import FeaturedCardSkeleton from "./FeaturedCardSkeleton";
-import "./FeaturedProducts.css";
+import "../FeaturedProducts.css";
 
 function FeaturedProductsSkeleton() {
   return (

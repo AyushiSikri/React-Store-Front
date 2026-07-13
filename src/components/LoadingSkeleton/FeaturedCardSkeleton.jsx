@@ -1,4 +1,4 @@
-import "./FeaturedCard.css";
+import "../FeaturedCard.css";
 import "./FeaturedCardSkeleton.css";
 
 function FeaturedCardSkeleton() {

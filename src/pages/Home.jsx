@@ -8,11 +8,11 @@ import { getProducts } from "../services/productApi";
 import { getCategories, getSelectedCategory } from "../services/categoryApi";
 import FeaturedProducts from "../components/FeaturedProducts";
 import bannerImg from "../assets/banner_img.png";
-import ProductGridSkeleton from "../components/ProductGridSkeleton";
-import CategorySidebarSkeleton from "../components/CategorySidebarSkeleton";
-import BannerSkeleton from "../components/BannerSkeleton";
-import FeaturedProductsSkeleton from "../components/FeaturedProductsSkeleton";
-import ErrorState from "../components/ErrorState";
+import ProductGridSkeleton from "../components/LoadingSkeleton/ProductGridSkeleton";
+import CategorySidebarSkeleton from "../components/LoadingSkeleton/CategorySidebarSkeleton";
+import BannerSkeleton from "../components/LoadingSkeleton/BannerSkeleton";
+import FeaturedProductsSkeleton from "../components/LoadingSkeleton/FeaturedProductsSkeleton";
+import ErrorState from "../components/ErrorState/ErrorState";
 
 function Home() {
   const [categories, setCategories] = useState([]);
@@ -30,7 +30,7 @@ function Home() {
       setErrorCategories(null);
       const data = await getCategories();
       setCategories(data);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       setErrorCategories("Unable to load categories.");
     } finally {
@@ -45,7 +45,7 @@ function Home() {
       const data = await getProducts();
       setProducts(data);
       setFeaturedProducts(data);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       setError("Unable to load products.");
     } finally {
@@ -59,7 +59,7 @@ function Home() {
       setError(null);
       const data = await getSelectedCategory(selectedCategory);
       setProducts(data);
-      console.log("handleCategoryChange" + data);
+      // console.log("handleCategoryChange" + data);
     } catch (error) {
       setError("Unable to load products.");
     } finally {
@@ -104,12 +104,13 @@ function Home() {
           <section className="banner-section">
             <img
               className="banner-img"
+              loading="lazy"
               src={bannerImg}
               alt="Summer Sale Banner"
             />
 
             <div className="banner-content">
-              <h1>✨ Summer Sale</h1>
+              <h1>Summer Sale</h1>
               <p>Up to 40% OFF</p>
               <p>Explore thousands of products</p>
             </div>

@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import { getProductDetail } from "../services/productApi";
 import ProductCard from "../components/ProductCard";
 import "./ProductDetails.css";
-import ProductDetailSkeleton from "../components/ProductDetailSkeleton";
-import ErrorState from "../components/ErrorState";
+import ProductDetailSkeleton from "../components/LoadingSkeleton/ProductDetailSkeleton";
+import ErrorState from "../components/ErrorState/ErrorState";
 
 function ProductDetails() {
   const [productDetail, setProductDetail] = useState([]);
@@ -16,7 +16,7 @@ function ProductDetails() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   async function fetchProductDetail(id) {
     try {
@@ -26,7 +26,7 @@ function ProductDetails() {
       setProductDetail(data);
       checkInStock(data);
       setProductImages(data?.images);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       setError("Unable to load product.");
     } finally {
@@ -48,19 +48,19 @@ function ProductDetails() {
     fetchProductDetail(id);
   }, []);
 
-    if (error) {
-  return (
-    <>
-      <Navbar />
-      <ErrorState
-        message={error}
-        onRetry={() => {
-          fetchProductDetail(id)
-        }}
-      />
-    </>
-  );
-}
+  if (error) {
+    return (
+      <>
+        <Navbar />
+        <ErrorState
+          message={error}
+          onRetry={() => {
+            fetchProductDetail(id);
+          }}
+        />
+      </>
+    );
+  }
 
   return (
     <>
@@ -71,6 +71,7 @@ function ProductDetails() {
         <section className="product-detail-section">
           <section className="product-detail-inner-section">
             <img
+              loading="lazy"
               className="product-detail-thumbnail"
               src={
                 selectedImage == "" ? productDetail?.thumbnail : selectedImage
@@ -81,6 +82,7 @@ function ProductDetails() {
               {productImages.map((item) => {
                 return (
                   <img
+                    loading="lazy"
                     className="product-detail-img"
                     onClick={() => setSelectedImage(item)}
                     src={item}
